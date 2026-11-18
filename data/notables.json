@@ -1,0 +1,299 @@
+{
+ "_note": "Medium cluster jewel notables per enchantment, read from poedb.tw/us/Medium_Cluster_Jewel. The two old Aura and Curse enchantments poedb marks 'old do not use' are left out. Edit freely: the tool builds every pair of notables inside each enchantment.",
+ "enchants": [
+  {
+   "name": "Burning Damage",
+   "heading": "12% increased Burning Damage",
+   "notables": [
+    "Eye of the Storm",
+    "Master of Fire",
+    "Smoking Remains",
+    "Cremator",
+    "Blowback",
+    "Fan the Flames",
+    "Cooked Alive",
+    "Burning Bright",
+    "Wrapped in Flame",
+    "Wasting Affliction",
+    "Haemorrhage",
+    "Flow of Life",
+    "Exposure Therapy",
+    "Brush with Death",
+    "Vile Reinvigoration",
+    "Circling Oblivion",
+    "Brewed for Potency",
+    "Student of Decay"
+   ]
+  },
+  {
+   "name": "Chaos Damage over Time",
+   "heading": "12% increased Chaos Damage over Time",
+   "notables": [
+    "Unwaveringly Evil",
+    "Dark Ideation",
+    "Wicked Pall",
+    "Septic Spells",
+    "Low Tolerance",
+    "Steady Torment",
+    "Eternal Suffering",
+    "Eldritch Inspiration",
+    "Wasting Affliction",
+    "Haemorrhage",
+    "Flow of Life",
+    "Exposure Therapy",
+    "Brush with Death",
+    "Vile Reinvigoration",
+    "Circling Oblivion",
+    "Brewed for Potency",
+    "Student of Decay"
+   ]
+  },
+  {
+   "name": "Physical Damage over Time",
+   "heading": "12% increased Physical Damage over Time",
+   "notables": [
+    "Wound Aggravation",
+    "Vivid Hues",
+    "Rend",
+    "Disorienting Wounds",
+    "Compound Injury",
+    "Steady Torment",
+    "Blood Artist",
+    "Phlebotomist",
+    "Wasting Affliction",
+    "Haemorrhage",
+    "Flow of Life",
+    "Exposure Therapy",
+    "Brush with Death",
+    "Vile Reinvigoration",
+    "Circling Oblivion",
+    "Brewed for Potency",
+    "Student of Decay"
+   ]
+  },
+  {
+   "name": "Cold Damage over Time",
+   "heading": "12% increased Cold Damage over Time",
+   "notables": [
+    "Cold-Blooded Killer",
+    "Chilling Presence",
+    "Deep Chill",
+    "Blast-Freeze",
+    "Wasting Affliction",
+    "Haemorrhage",
+    "Flow of Life",
+    "Exposure Therapy",
+    "Brush with Death",
+    "Vile Reinvigoration",
+    "Circling Oblivion",
+    "Brewed for Potency"
+   ]
+  },
+  {
+   "name": "Damage over Time",
+   "heading": "10% increased Damage over Time",
+   "notables": [
+    "Wasting Affliction",
+    "Haemorrhage",
+    "Flow of Life",
+    "Exposure Therapy",
+    "Brush with Death",
+    "Vile Reinvigoration",
+    "Circling Oblivion",
+    "Brewed for Potency",
+    "Student of Decay"
+   ]
+  },
+  {
+   "name": "Effect of Non-Damaging Ailments",
+   "heading": "10% increased Effect of Non-Damaging Ailments",
+   "notables": [
+    "Eye of the Storm",
+    "Astonishing Affliction",
+    "Cold Conduction",
+    "Inspired Oppression",
+    "Chilling Presence",
+    "Deep Chill",
+    "Blast-Freeze",
+    "Stormrider",
+    "Overshock"
+   ]
+  },
+  {
+   "name": "Damage while affected by a Herald",
+   "heading": "10% increased Damage while affected by a Herald",
+   "notables": [
+    "Purposeful Harbinger",
+    "Heraldry",
+    "Endbringer",
+    "Empowered Envoy",
+    "Dark Messenger",
+    "Agent of Destruction",
+    "Lasting Impression",
+    "Self-Fulfilling Prophecy"
+   ]
+  },
+  {
+   "name": "Minion Damage while affected by a Herald",
+   "heading": "Minions deal 10% increased Damage while you are affected by a Herald",
+   "notables": [
+    "Purposeful Harbinger",
+    "Heraldry",
+    "Endbringer",
+    "Cult-Leader",
+    "Lasting Impression",
+    "Invigorating Portents",
+    "Pure Agony",
+    "Disciples"
+   ]
+  },
+  {
+   "name": "Exerted Attacks",
+   "heading": "Exerted Attacks deal 20% increased Damage",
+   "notables": [
+    "Mob Mentality",
+    "Cry Wolf",
+    "Haunting Shout",
+    "Lead By Example",
+    "Provocateur",
+    "Warning Call",
+    "Rattling Bellow",
+    "Holy Word"
+   ]
+  },
+  {
+   "name": "Critical Strike Chance",
+   "heading": "15% increased Critical Strike Chance",
+   "notables": [
+    "Precise Retaliation",
+    "Skullbreaker",
+    "Pressure Points",
+    "Overwhelming Malice",
+    "Magnifier",
+    "Savage Response",
+    "Eye of the Storm",
+    "Basics of Pain",
+    "Quick Getaway",
+    "Provocateur",
+    "Haemorrhage"
+   ]
+  },
+  {
+   "name": "Minion Life",
+   "heading": "Minions have 12% increased maximum Life",
+   "notables": [
+    "Renewal",
+    "Hulking Corpses",
+    "Dread March",
+    "Blessed Rebirth",
+    "Life from Death",
+    "Feasting Fiends",
+    "Bodyguards"
+   ]
+  },
+  {
+   "name": "Area Damage",
+   "heading": "10% increased Area Damage",
+   "notables": [
+    "Magnifier",
+    "Assert Dominance",
+    "Vast Power",
+    "Powerful Assault",
+    "Titanic Swings",
+    "Towering Threat",
+    "Expansive Might"
+   ]
+  },
+  {
+   "name": "Projectile Damage",
+   "heading": "10% increased Projectile Damage",
+   "notables": [
+    "Follow-Through",
+    "Streamlined",
+    "Shrieking Bolts",
+    "Eye to Eye",
+    "Repeater",
+    "Aerodynamics"
+   ]
+  },
+  {
+   "name": "Trap and Mine Damage",
+   "heading": "12% increased Trap Damage / 12% increased Mine Damage",
+   "notables": [
+    "Set and Forget",
+    "Expert Sabotage",
+    "Guerilla Tactics",
+    "Expendability",
+    "Arcane Pyrotechnics",
+    "Surprise Sabotage",
+    "Careful Handling"
+   ]
+  },
+  {
+   "name": "Totem Damage",
+   "heading": "12% increased Totem Damage",
+   "notables": [
+    "Ancestral Echo",
+    "Ancestral Reach",
+    "Ancestral Might",
+    "Ancestral Preservation",
+    "Snaring Spirits",
+    "Sleepless Sentries",
+    "Ancestral Guidance",
+    "Ancestral Inspiration"
+   ]
+  },
+  {
+   "name": "Brand Damage",
+   "heading": "12% increased Brand Damage",
+   "notables": [
+    "Chip Away",
+    "Seeker Runes",
+    "Remarkable",
+    "Brand Loyalty",
+    "Holy Conquest",
+    "Grand Design"
+   ]
+  },
+  {
+   "name": "Channelling Skills",
+   "heading": "Channelling Skills deal 12% increased Damage",
+   "notables": [
+    "Vital Focus",
+    "Unrestrained Focus",
+    "Unwavering Focus",
+    "Enduring Focus",
+    "Precise Focus",
+    "Stoic Focus",
+    "Hex Breaker"
+   ]
+  },
+  {
+   "name": "Flask Effect Duration",
+   "heading": "6% increased Flask Effect Duration",
+   "notables": [
+    "Distilled Perfection",
+    "Spiked Concoction",
+    "Fasting",
+    "Mender's Wellspring",
+    "Special Reserve",
+    "Numbing Elixir",
+    "Brewed for Potency",
+    "Peak Vigour",
+    "Liquid Inspiration"
+   ]
+  },
+  {
+   "name": "Flask Recovery",
+   "heading": "10% increased Life Recovery from Flasks / 10% increased Mana Recovery from Flasks",
+   "notables": [
+    "Distilled Perfection",
+    "Spiked Concoction",
+    "Fasting",
+    "Mender's Wellspring",
+    "Special Reserve",
+    "Numbing Elixir"
+   ]
+  }
+ ]
+}

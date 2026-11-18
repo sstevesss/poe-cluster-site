@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Medium Cluster Jewel Price Floors</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #14110f; --panel: #1e1a17; --line: #3a322c; --text: #e8dfd2; --muted: #9a8f80;
+    --accent: #d9a441; --accent-dark: #a97a1f; --good: #7fc47f; --warn: #e0a040; --bad: #e06666;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.4 "Segoe UI", system-ui, sans-serif; }
+  header { padding: 14px 20px; border-bottom: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: end; background: var(--panel); }
+  h1 { font-size: 18px; margin: 0 20px 0 0; color: var(--accent); font-weight: 600; }
+  label { display: flex; flex-direction: column; gap: 3px; color: var(--muted); font-size: 12px; }
+  input, select { background: #0e0c0b; color: var(--text); border: 1px solid var(--line); border-radius: 4px; padding: 6px 8px; font: inherit; min-width: 110px; }
+  input[type=number] { width: 110px; }
+  button { font: inherit; border-radius: 5px; border: 1px solid var(--line); background: #2a241f; color: var(--text); padding: 7px 14px; cursor: pointer; }
+  button:hover:not(:disabled) { border-color: var(--accent); }
+  main { padding: 16px 20px 40px; }
+  .progress { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; margin-bottom: 14px; }
+  .muted { color: var(--muted); }
+  .error { color: var(--bad); font-weight: 600; white-space: pre-wrap; }
+  .warn { color: var(--warn); }
+  .toolbar { display: flex; gap: 14px; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
+  .toolbar input { min-width: 240px; }
+  table { border-collapse: collapse; width: 100%; background: var(--panel); border: 1px solid var(--line); }
+  th, td { padding: 6px 10px; text-align: left; border-bottom: 1px solid #2a241f; white-space: nowrap; }
+  th { position: sticky; top: 0; background: #272019; cursor: pointer; user-select: none; font-weight: 600; color: var(--muted); }
+  th:hover { color: var(--text); }
+  th.sorted { color: var(--accent); }
+  td.num, th.num { text-align: right; }
+  tr.below { opacity: .45; }
+  tr:hover td { background: #262019; }
+  .price { font-weight: 600; }
+  .div { color: var(--accent); }
+  .flag { color: var(--warn); cursor: help; }
+  .ench { color: #c9b98f; }
+  a { color: #8fb7e8; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  details { margin-top: 18px; color: var(--muted); }
+  .wrap { max-height: 70vh; overflow: auto; border: 1px solid var(--line); }
+  .wrap table { border: 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Medium Cluster Jewel Price Floors</h1>
+  <label>Cutoff (chaos) <input id="cutoff" type="number" min="0" step="1" value="70"></label>
+  <span id="info" class="muted"></span>
+</header>
+
+<main>
+  <div class="progress" id="notice">Loading prices...</div>
+
+  <div class="progress" id="rankbox">
+    <div class="toolbar" style="margin-bottom:6px">
+      <b>Best enchants to roll</b>
+      <label>Item level <select id="ilvl">
+        <option value="84">84+</option><option value="83">75-83</option><option value="74">68-74</option>
+        <option value="67">50-67</option><option value="49">below 50</option></select></label>
+      <label>Ignore pairs with fewer listings than <input id="minlist" type="number" min="0" step="1" value="0" style="min-width:60px;width:60px"></label>
+      <span class="muted" style="font-size:12px">Uses the cutoff above as "valuable". One chaos orb = 1c, base jewel cost ignored.</span>
+    </div>
+    <div style="display:flex;gap:30px;flex-wrap:wrap">
+      <div style="flex:1;min-width:340px"><div class="muted">Top 3 by expected profit per 100 chaos spent</div><div id="rankprofit"></div></div>
+      <div style="flex:1;min-width:340px"><div class="muted">Top 3 by fewest orbs to hit a valuable pair</div><div id="rankcost"></div></div>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <input id="filter" placeholder="Filter by enchantment or notable...">
+    <span id="summary" class="muted"></span>
+  </div>
+  <div class="wrap">
+    <table>
+      <thead><tr id="head"></tr></thead>
+      <tbody id="body"></tbody>
+    </table>
+  </div>
+
+  <details id="rx">
+    <summary>Regex export (stash search for valuable pairs)</summary>
+    <div class="toolbar" style="margin-top:10px">
+      <label>Enchantment <select id="rxench"></select></label>
+      <label>Price at or above (chaos) <input id="rxmin" type="number" min="0" step="1" style="min-width:90px"></label>
+      <button id="rxgo">Make regex</button>
+    </div>
+    <div id="rxout" class="muted"></div>
+  </details>
+
+  <details>
+    <summary>How this works</summary>
+    <div class="muted" style="margin-top:8px;max-width:760px">
+      Prices come from the public Path of Exile trade site: instant-buyout listings of medium cluster jewels with 4 or 5
+      passives (uncorrupted), one listing per seller. "Typical floor" is the middle price of the 5 cheapest sellers.
+      This page only shows a saved snapshot; it never contacts the trade site itself, so using it cannot affect anyone's
+      trade rate limits. The snapshot is refreshed from the owner's PC, so newer prices appear after the next upload.
+      E(chaos) is the expected number of chaos orbs to roll that exact enchantment + notable pair at the chosen item level,
+      using poedb notable weights.
+    </div>
+  </details>
+</main>
+
+<script src="js/ranking.js"></script>
+<script src="js/regexgen.js"></script>
+<script>
+const COLS = [
+  {k: 'rank', t: '#', cls: 'num', sort: false},
+  {k: 'enchant', t: 'Enchantment'},
+  {k: 'a', t: 'Notable 1'},
+  {k: 'b', t: 'Notable 2'},
+  {k: 'typical', t: 'Typical floor', cls: 'num'},
+  {k: 'cheapest', t: 'Cheapest', cls: 'num'},
+  {k: 'total', t: 'Listings', cls: 'num'},
+  {k: 'echaos', t: 'E(chaos)', cls: 'num'},
+  {k: 'flag', t: '', sort: false},
+  {k: 'scanned_at', t: 'Updated', cls: 'num'},
+  {k: 'url', t: '', sort: false},
+];
+let data = null, notables = null, weights = null, frags = null;
+let rows = [], sortKey = 'typical', sortDir = -1;
+const probCache = {};
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function store(k, v) { try { localStorage.setItem('poe.' + k, v); } catch (e) { /* storage can be unavailable */ } }
+function recall(k, d) { try { const v = localStorage.getItem('poe.' + k); return v === null ? d : v; } catch (e) { return d; } }
+
+function fmtC(x) { return x >= 100 ? Math.round(x) : x.toFixed(1).replace(/\.0$/, ''); }
+function fmtPrice(c) {
+  if (c == null) return '<span class="muted">-</span>';
+  const rate = data && data.divine_chaos;
+  if (rate && c >= rate * 0.8) return `<span class="price div">${(c / rate).toFixed(1)} div</span> <span class="muted">(${fmtC(c)}c)</span>`;
+  return `<span class="price">${fmtC(c)}c</span>`;
+}
+function ago(ts) {
+  if (!ts) return '<span class="muted">never</span>';
+  const s = Math.max(0, Date.now() / 1000 - ts);
+  if (s < 90) return 'just now';
+  if (s < 5400) return Math.round(s / 60) + 'm ago';
+  if (s < 129600) return Math.round(s / 3600) + 'h ago';
+  return Math.round(s / 86400) + 'd ago';
+}
+function fmtOrbs(x) {
+  if (x === null || x === undefined) return '<span class="muted">-</span>';
+  return x < 10 ? x.toFixed(1) : Math.round(x).toLocaleString();
+}
+function oneIn(p) { const n = 1 / p; return '1 in ' + (n >= 10 ? Math.round(n) : n.toFixed(1)); }
+
+function probsFor(ilvl) {
+  if (!probCache[ilvl]) probCache[ilvl] = PoeRanking.allPairProbs(weights, ilvl);
+  return probCache[ilvl];
+}
+function cutoff() { const v = Number($('cutoff').value); return isFinite(v) && v >= 0 ? v : 0; }
+
+function renderHead() {
+  $('head').innerHTML = COLS.map(c => {
+    const sortable = c.sort !== false;
+    const cls = [c.cls || '', sortKey === c.k ? 'sorted' : ''].join(' ');
+    const arrow = sortKey === c.k ? (sortDir < 0 ? ' ▼' : ' ▲') : '';
+    return `<th class="${cls}" data-k="${c.k}" data-sortable="${sortable}">${esc(c.t)}${arrow}</th>`;
+  }).join('');
+  document.querySelectorAll('#head th').forEach(th => th.onclick = () => {
+    if (th.dataset.sortable !== 'true') return;
+    const k = th.dataset.k;
+    if (sortKey === k) sortDir = -sortDir; else { sortKey = k; sortDir = (k === 'a' || k === 'b' || k === 'enchant' || k === 'echaos') ? 1 : -1; }
+    renderHead(); renderRows();
+  });
+}
+
+function renderRows() {
+  if (!data) return;
+  const f = $('filter').value.trim().toLowerCase();
+  const cut = cutoff();
+  const probs = probsFor(Number($('ilvl').value));
+  rows.forEach(r => {
+    const p = PoeRanking.pairProb(probs[r.enchant] || {}, r.a, r.b);
+    r.echaos = p ? 1 / p : null;
+  });
+  const list = rows.filter(r => !f || (r.a + ' ' + r.b + ' ' + r.enchant).toLowerCase().includes(f));
+  const val = r => { const v = r[sortKey]; return v === null || v === undefined ? null : v; };
+  list.sort((x, y) => {
+    const a = val(x), b = val(y);
+    if (a === null && b === null) return x.a.localeCompare(y.a);
+    if (a === null) return 1;
+    if (b === null) return -1;
+    if (typeof a === 'string') return sortDir * a.localeCompare(b);
+    return sortDir * (a - b);
+  });
+  const shown = list.slice(0, 2000);
+  $('body').innerHTML = shown.map((r, i) => {
+    const below = r.typical !== null && r.typical < cut;
+    let price = fmtPrice(r.typical), cheap = fmtPrice(r.cheapest), total = r.total ?? '';
+    if (r.status === 'none') price = '<span class="muted">no listings</span>';
+    if (r.status === 'error') price = '<span class="warn">error</span>';
+    if (r.status === 'new') price = '<span class="muted">not scanned</span>';
+    const flag = r.outlier ? `<span class="flag" title="The cheapest listing is far below the rest. Typical floor uses the median of the cheapest ${r.prices.length}.">⚠ low outlier</span>` : '';
+    const tip = r.prices.length ? 'Cheapest listings (chaos): ' + r.prices.join(', ') : '';
+    return `<tr class="${below ? 'below' : ''}" title="${esc(tip)}">` +
+      `<td class="num muted">${i + 1}</td><td class="ench">${esc(r.enchant)}</td><td>${esc(r.a)}</td><td>${esc(r.b)}</td>` +
+      `<td class="num">${price}</td><td class="num">${cheap}</td><td class="num">${total}</td>` +
+      `<td class="num" title="Expected chaos orbs to roll this exact pair (item level picker above)">${fmtOrbs(r.echaos)}</td>` +
+      `<td>${flag}</td><td class="num muted">${ago(r.scanned_at)}</td>` +
+      `<td>${r.url ? `<a href="${esc(r.url)}" target="_blank" rel="noopener">Trade ↗</a>` : ''}</td></tr>`;
+  }).join('');
+  const priced = rows.filter(r => r.typical !== null).length;
+  const above = rows.filter(r => r.typical !== null && r.typical >= cut).length;
+  $('summary').textContent = `${rows.length} combinations | ${priced} priced | ${above} at or above the ${cut}c cutoff` +
+    (list.length > shown.length ? ` | showing first ${shown.length}` : '');
+}
+
+function rankLine(r, i, kind) {
+  const profit = r.profit_per_100;
+  const main = kind === 'profit'
+    ? `<b class="${profit >= 0 ? 'div' : ''}">${profit >= 0 ? '+' : ''}${fmtC(profit)}c</b> per 100 orbs`
+    : `<b>${r.orbs_per_hit >= 10 ? Math.round(r.orbs_per_hit) : r.orbs_per_hit.toFixed(1)}</b> orbs per hit`;
+  const rest = kind === 'profit'
+    ? `hits ${oneIn(r.p_hit)} orbs, avg ${fmtC(r.avg_value)}c`
+    : `avg hit ${fmtC(r.avg_value)}c, ${profit >= 0 ? '+' : ''}${fmtC(profit)}c per 100 orbs`;
+  return `<div style="margin:4px 0">${i + 1}. <span class="ench">${esc(r.enchant)}</span> - ${main} <span class="muted">(${rest}; ${r.pairs} pair${r.pairs === 1 ? '' : 's'}, ${r.priced}/${r.total} priced)</span></div>`;
+}
+function renderRanking() {
+  if (!data) return;
+  const d = PoeRanking.rank(weights.enchants, rows, cutoff(), Number($('ilvl').value),
+                            Number($('minlist').value) || 0, undefined, weights.other_prefixes || []);
+  const none = '<span class="muted">No priced pairs above the cutoff yet.</span>';
+  $('rankprofit').innerHTML = d.top_profit.length ? d.top_profit.map((r, i) => rankLine(r, i, 'profit')).join('') : none;
+  $('rankcost').innerHTML = d.top_cost.length ? d.top_cost.map((r, i) => rankLine(r, i, 'cost')).join('') : none;
+}
+function renderAll() { renderRows(); renderRanking(); }
+
+$('rxgo').onclick = () => {
+  const out = $('rxout');
+  const enchant = $('rxench').value, min = Number($('rxmin').value) || 0;
+  const mine = rows.filter(r => r.enchant === enchant);
+  const pairs = mine.filter(r => r.status === 'ok' && r.typical !== null && r.typical >= min).map(r => [r.a, r.b]);
+  const priced = mine.filter(r => r.status === 'ok' || r.status === 'none').length;
+  const total = mine.filter(r => r.status !== 'unavailable').length;
+  if (!pairs.length) {
+    out.textContent = `No priced pairs at or above ${min}c for this enchantment yet (${priced} of ${total} priced).`;
+    return;
+  }
+  const res = PoeRegex.build(enchant, pairs, frags);
+  let h = `<div style="margin:6px 0">${pairs.length} pair(s) at or above ${esc(min)}c. ${priced} of ${total} combinations for this enchantment are priced so far. ` +
+          (res.length > 1 ? `They do not fit in one search box, so there are ${res.length} searches: use one at a time.` : 'One search covers them all.') + '</div>';
+  res.forEach((r, i) => {
+    h += `<div style="margin:8px 0"><div class="muted">Search ${i + 1} of ${res.length}: ${r.pairs.length} pair(s), ${r.length} of 250 characters</div>` +
+         `<input readonly value="${esc(r.regex)}" style="width:100%;font-family:monospace" onclick="this.select()"> ` +
+         `<button onclick="navigator.clipboard.writeText(this.previousElementSibling.value);this.textContent='Copied'">Copy</button>` +
+         `<details><summary class="muted">Pairs covered</summary><div class="muted">${r.pairs.map(p => esc(p[0] + ' + ' + p[1])).join('<br>')}</div></details></div>`;
+  });
+  out.innerHTML = h;
+};
+
+async function getJson(path) {
+  const r = await fetch(path, {cache: 'no-cache'});
+  if (!r.ok) throw new Error(path + ': ' + r.status);
+  return r.json();
+}
+
+async function init() {
+  renderHead();
+  try {
+    [data, notables, weights, frags] = await Promise.all([
+      getJson('data/prices.json'), getJson('data/notables.json'), getJson('data/weights.json'), getJson('data/fragments.json')]);
+  } catch (e) {
+    $('notice').innerHTML = '<span class="error">Could not load the saved prices. If you opened this file straight from a folder, ' +
+      'use the web address instead (browsers block loading data from local files).<br>' + esc(e.message) + '</span>';
+    return;
+  }
+  rows = data.rows;
+  $('cutoff').value = recall('cutoff', data.cutoff_default || 70);
+  $('ilvl').value = recall('ilvl', '84');
+  if (![...$('ilvl').options].some(o => o.value === $('ilvl').value)) $('ilvl').value = '84';
+  $('minlist').value = recall('minlist', '0');
+  $('rxench').innerHTML = notables.enchants.map(e => `<option>${esc(e.name)}</option>`).join('');
+  $('rxmin').value = $('cutoff').value;
+  const when = new Date(data.generated_at * 1000);
+  $('info').textContent = `${data.league} | saved ${when.toLocaleString()}` +
+    (data.divine_chaos ? ` | 1 divine = ${fmtC(data.divine_chaos)}c` : '');
+  const priced = rows.filter(r => r.status === 'ok' || r.status === 'none').length;
+  $('notice').innerHTML = `Read-only snapshot of saved prices (${priced} of ${rows.length} combinations checked), last updated <b>${ago(data.generated_at)}</b>. ` +
+    '<span class="muted">New prices appear here after the owner uploads the next batch.</span>';
+  renderAll();
+}
+
+$('filter').oninput = renderRows;
+$('cutoff').onchange = () => { store('cutoff', $('cutoff').value); renderAll(); };
+$('ilvl').onchange = () => { store('ilvl', $('ilvl').value); renderAll(); };
+$('minlist').onchange = () => { store('minlist', $('minlist').value); renderRanking(); };
+init();
+</script>
+</body>
+</html>

@@ -1,0 +1,965 @@
+{
+ "_note": "Notable spawn weights and required item levels per enchantment, from poedb.tw Medium Cluster Jewel (Nov 2026). Suffix weights do not matter for pair odds.",
+ "enchants": {
+  "Burning Damage": {
+   "Eye of the Storm": {
+    "weight": 366,
+    "level": 50
+   },
+   "Master of Fire": {
+    "weight": 46,
+    "level": 75
+   },
+   "Smoking Remains": {
+    "weight": 366,
+    "level": 50
+   },
+   "Cremator": {
+    "weight": 366,
+    "level": 50
+   },
+   "Blowback": {
+    "weight": 366,
+    "level": 50
+   },
+   "Fan the Flames": {
+    "weight": 137,
+    "level": 68
+   },
+   "Cooked Alive": {
+    "weight": 137,
+    "level": 68
+   },
+   "Burning Bright": {
+    "weight": 366,
+    "level": 50
+   },
+   "Wrapped in Flame": {
+    "weight": 137,
+    "level": 68
+   },
+   "Wasting Affliction": {
+    "weight": 137,
+    "level": 68
+   },
+   "Haemorrhage": {
+    "weight": 366,
+    "level": 50
+   },
+   "Flow of Life": {
+    "weight": 137,
+    "level": 68
+   },
+   "Exposure Therapy": {
+    "weight": 733,
+    "level": 1
+   },
+   "Brush with Death": {
+    "weight": 137,
+    "level": 68
+   },
+   "Vile Reinvigoration": {
+    "weight": 366,
+    "level": 50
+   },
+   "Circling Oblivion": {
+    "weight": 733,
+    "level": 1
+   },
+   "Brewed for Potency": {
+    "weight": 733,
+    "level": 1
+   },
+   "Student of Decay": {
+    "weight": 366,
+    "level": 50
+   }
+  },
+  "Chaos Damage over Time": {
+   "Unwaveringly Evil": {
+    "weight": 696,
+    "level": 1
+   },
+   "Dark Ideation": {
+    "weight": 130,
+    "level": 68
+   },
+   "Wicked Pall": {
+    "weight": 348,
+    "level": 50
+   },
+   "Septic Spells": {
+    "weight": 348,
+    "level": 50
+   },
+   "Low Tolerance": {
+    "weight": 130,
+    "level": 68
+   },
+   "Steady Torment": {
+    "weight": 130,
+    "level": 68
+   },
+   "Eternal Suffering": {
+    "weight": 348,
+    "level": 50
+   },
+   "Eldritch Inspiration": {
+    "weight": 348,
+    "level": 50
+   },
+   "Wasting Affliction": {
+    "weight": 130,
+    "level": 68
+   },
+   "Haemorrhage": {
+    "weight": 348,
+    "level": 50
+   },
+   "Flow of Life": {
+    "weight": 130,
+    "level": 68
+   },
+   "Exposure Therapy": {
+    "weight": 696,
+    "level": 1
+   },
+   "Brush with Death": {
+    "weight": 130,
+    "level": 68
+   },
+   "Vile Reinvigoration": {
+    "weight": 348,
+    "level": 50
+   },
+   "Circling Oblivion": {
+    "weight": 696,
+    "level": 1
+   },
+   "Brewed for Potency": {
+    "weight": 696,
+    "level": 1
+   },
+   "Student of Decay": {
+    "weight": 348,
+    "level": 50
+   }
+  },
+  "Physical Damage over Time": {
+   "Wound Aggravation": {
+    "weight": 686,
+    "level": 1
+   },
+   "Vivid Hues": {
+    "weight": 343,
+    "level": 50
+   },
+   "Rend": {
+    "weight": 343,
+    "level": 50
+   },
+   "Disorienting Wounds": {
+    "weight": 686,
+    "level": 1
+   },
+   "Compound Injury": {
+    "weight": 343,
+    "level": 50
+   },
+   "Steady Torment": {
+    "weight": 129,
+    "level": 68
+   },
+   "Wasting Affliction": {
+    "weight": 129,
+    "level": 68
+   },
+   "Haemorrhage": {
+    "weight": 343,
+    "level": 50
+   },
+   "Flow of Life": {
+    "weight": 129,
+    "level": 68
+   },
+   "Exposure Therapy": {
+    "weight": 686,
+    "level": 1
+   },
+   "Brush with Death": {
+    "weight": 129,
+    "level": 68
+   },
+   "Vile Reinvigoration": {
+    "weight": 343,
+    "level": 50
+   },
+   "Circling Oblivion": {
+    "weight": 686,
+    "level": 1
+   },
+   "Brewed for Potency": {
+    "weight": 686,
+    "level": 1
+   },
+   "Student of Decay": {
+    "weight": 343,
+    "level": 50
+   },
+   "Blood Artist": {
+    "weight": 129,
+    "level": 75
+   },
+   "Phlebotomist": {
+    "weight": 343,
+    "level": 50
+   }
+  },
+  "Cold Damage over Time": {
+   "Cold-Blooded Killer": {
+    "weight": 390,
+    "level": 50
+   },
+   "Wasting Affliction": {
+    "weight": 178,
+    "level": 68
+   },
+   "Haemorrhage": {
+    "weight": 475,
+    "level": 50
+   },
+   "Flow of Life": {
+    "weight": 178,
+    "level": 68
+   },
+   "Exposure Therapy": {
+    "weight": 950,
+    "level": 1
+   },
+   "Brush with Death": {
+    "weight": 178,
+    "level": 68
+   },
+   "Vile Reinvigoration": {
+    "weight": 475,
+    "level": 50
+   },
+   "Circling Oblivion": {
+    "weight": 950,
+    "level": 1
+   },
+   "Brewed for Potency": {
+    "weight": 950,
+    "level": 1
+   },
+   "Chilling Presence": {
+    "weight": 59,
+    "level": 75
+   },
+   "Deep Chill": {
+    "weight": 950,
+    "level": 1
+   },
+   "Blast-Freeze": {
+    "weight": 178,
+    "level": 68
+   }
+  },
+  "Damage over Time": {
+   "Wasting Affliction": {
+    "weight": 222,
+    "level": 68
+   },
+   "Haemorrhage": {
+    "weight": 593,
+    "level": 50
+   },
+   "Flow of Life": {
+    "weight": 222,
+    "level": 68
+   },
+   "Exposure Therapy": {
+    "weight": 1185,
+    "level": 1
+   },
+   "Brush with Death": {
+    "weight": 222,
+    "level": 68
+   },
+   "Vile Reinvigoration": {
+    "weight": 593,
+    "level": 50
+   },
+   "Circling Oblivion": {
+    "weight": 1185,
+    "level": 1
+   },
+   "Brewed for Potency": {
+    "weight": 1185,
+    "level": 1
+   },
+   "Student of Decay": {
+    "weight": 593,
+    "level": 50
+   }
+  },
+  "Effect of Non-Damaging Ailments": {
+   "Eye of the Storm": {
+    "weight": 814,
+    "level": 50
+   },
+   "Astonishing Affliction": {
+    "weight": 1627,
+    "level": 1
+   },
+   "Cold Conduction": {
+    "weight": 305,
+    "level": 68
+   },
+   "Inspired Oppression": {
+    "weight": 102,
+    "level": 75
+   },
+   "Chilling Presence": {
+    "weight": 102,
+    "level": 75
+   },
+   "Deep Chill": {
+    "weight": 1627,
+    "level": 1
+   },
+   "Blast-Freeze": {
+    "weight": 305,
+    "level": 68
+   },
+   "Stormrider": {
+    "weight": 305,
+    "level": 68
+   },
+   "Overshock": {
+    "weight": 814,
+    "level": 50
+   }
+  },
+  "Damage while affected by a Herald": {
+   "Purposeful Harbinger": {
+    "weight": 118,
+    "level": 75
+   },
+   "Heraldry": {
+    "weight": 118,
+    "level": 75
+   },
+   "Endbringer": {
+    "weight": 353,
+    "level": 68
+   },
+   "Empowered Envoy": {
+    "weight": 1882,
+    "level": 1
+   },
+   "Dark Messenger": {
+    "weight": 941,
+    "level": 50
+   },
+   "Agent of Destruction": {
+    "weight": 1882,
+    "level": 1
+   },
+   "Lasting Impression": {
+    "weight": 353,
+    "level": 68
+   },
+   "Self-Fulfilling Prophecy": {
+    "weight": 353,
+    "level": 68
+   }
+  },
+  "Minion Damage while affected by a Herald": {
+   "Purposeful Harbinger": {
+    "weight": 158,
+    "level": 75
+   },
+   "Heraldry": {
+    "weight": 158,
+    "level": 75
+   },
+   "Endbringer": {
+    "weight": 474,
+    "level": 68
+   },
+   "Cult-Leader": {
+    "weight": 2526,
+    "level": 1
+   },
+   "Lasting Impression": {
+    "weight": 474,
+    "level": 68
+   },
+   "Invigorating Portents": {
+    "weight": 1263,
+    "level": 50
+   },
+   "Pure Agony": {
+    "weight": 474,
+    "level": 68
+   },
+   "Disciples": {
+    "weight": 474,
+    "level": 68
+   }
+  },
+  "Exerted Attacks": {
+   "Mob Mentality": {
+    "weight": 109,
+    "level": 75
+   },
+   "Cry Wolf": {
+    "weight": 327,
+    "level": 68
+   },
+   "Haunting Shout": {
+    "weight": 873,
+    "level": 50
+   },
+   "Lead By Example": {
+    "weight": 1745,
+    "level": 1
+   },
+   "Provocateur": {
+    "weight": 873,
+    "level": 50
+   },
+   "Warning Call": {
+    "weight": 327,
+    "level": 68
+   },
+   "Rattling Bellow": {
+    "weight": 1745,
+    "level": 1
+   },
+   "Holy Word": {
+    "weight": 873,
+    "level": 50
+   }
+  },
+  "Critical Strike Chance": {
+   "Precise Retaliation": {
+    "weight": 457,
+    "level": 50
+   },
+   "Skullbreaker": {
+    "weight": 171,
+    "level": 68
+   },
+   "Pressure Points": {
+    "weight": 457,
+    "level": 50
+   },
+   "Overwhelming Malice": {
+    "weight": 171,
+    "level": 68
+   },
+   "Magnifier": {
+    "weight": 914,
+    "level": 1
+   },
+   "Savage Response": {
+    "weight": 457,
+    "level": 50
+   },
+   "Eye of the Storm": {
+    "weight": 457,
+    "level": 50
+   },
+   "Basics of Pain": {
+    "weight": 914,
+    "level": 1
+   },
+   "Quick Getaway": {
+    "weight": 914,
+    "level": 1
+   },
+   "Provocateur": {
+    "weight": 457,
+    "level": 50
+   },
+   "Haemorrhage": {
+    "weight": 457,
+    "level": 50
+   }
+  },
+  "Minion Life": {
+   "Renewal": {
+    "weight": 716,
+    "level": 50
+   },
+   "Hulking Corpses": {
+    "weight": 716,
+    "level": 50
+   },
+   "Dread March": {
+    "weight": 1433,
+    "level": 1
+   },
+   "Blessed Rebirth": {
+    "weight": 269,
+    "level": 68
+   },
+   "Life from Death": {
+    "weight": 716,
+    "level": 50
+   },
+   "Feasting Fiends": {
+    "weight": 1433,
+    "level": 1
+   },
+   "Bodyguards": {
+    "weight": 716,
+    "level": 50
+   }
+  },
+  "Area Damage": {
+   "Magnifier": {
+    "weight": 1959,
+    "level": 1
+   },
+   "Assert Dominance": {
+    "weight": 367,
+    "level": 68
+   },
+   "Vast Power": {
+    "weight": 980,
+    "level": 50
+   },
+   "Powerful Assault": {
+    "weight": 980,
+    "level": 50
+   },
+   "Titanic Swings": {
+    "weight": 980,
+    "level": 50
+   },
+   "Towering Threat": {
+    "weight": 367,
+    "level": 68
+   },
+   "Expansive Might": {
+    "weight": 367,
+    "level": 68
+   }
+  },
+  "Projectile Damage": {
+   "Follow-Through": {
+    "weight": 333,
+    "level": 68
+   },
+   "Streamlined": {
+    "weight": 1778,
+    "level": 1
+   },
+   "Shrieking Bolts": {
+    "weight": 889,
+    "level": 50
+   },
+   "Eye to Eye": {
+    "weight": 889,
+    "level": 50
+   },
+   "Repeater": {
+    "weight": 1778,
+    "level": 1
+   },
+   "Aerodynamics": {
+    "weight": 333,
+    "level": 68
+   }
+  },
+  "Trap and Mine Damage": {
+   "Set and Forget": {
+    "weight": 980,
+    "level": 50
+   },
+   "Expert Sabotage": {
+    "weight": 980,
+    "level": 50
+   },
+   "Guerilla Tactics": {
+    "weight": 1959,
+    "level": 1
+   },
+   "Expendability": {
+    "weight": 367,
+    "level": 68
+   },
+   "Arcane Pyrotechnics": {
+    "weight": 367,
+    "level": 68
+   },
+   "Surprise Sabotage": {
+    "weight": 980,
+    "level": 50
+   },
+   "Careful Handling": {
+    "weight": 367,
+    "level": 68
+   }
+  },
+  "Totem Damage": {
+   "Ancestral Echo": {
+    "weight": 1477,
+    "level": 1
+   },
+   "Ancestral Reach": {
+    "weight": 1477,
+    "level": 1
+   },
+   "Ancestral Might": {
+    "weight": 738,
+    "level": 50
+   },
+   "Ancestral Preservation": {
+    "weight": 277,
+    "level": 68
+   },
+   "Snaring Spirits": {
+    "weight": 738,
+    "level": 50
+   },
+   "Sleepless Sentries": {
+    "weight": 277,
+    "level": 68
+   },
+   "Ancestral Guidance": {
+    "weight": 738,
+    "level": 50
+   },
+   "Ancestral Inspiration": {
+    "weight": 277,
+    "level": 68
+   }
+  },
+  "Brand Damage": {
+   "Chip Away": {
+    "weight": 1171,
+    "level": 50
+   },
+   "Seeker Runes": {
+    "weight": 439,
+    "level": 68
+   },
+   "Remarkable": {
+    "weight": 439,
+    "level": 68
+   },
+   "Brand Loyalty": {
+    "weight": 2341,
+    "level": 1
+   },
+   "Holy Conquest": {
+    "weight": 1171,
+    "level": 50
+   },
+   "Grand Design": {
+    "weight": 439,
+    "level": 68
+   }
+  },
+  "Channelling Skills": {
+   "Vital Focus": {
+    "weight": 1811,
+    "level": 1
+   },
+   "Unrestrained Focus": {
+    "weight": 340,
+    "level": 68
+   },
+   "Unwavering Focus": {
+    "weight": 906,
+    "level": 50
+   },
+   "Enduring Focus": {
+    "weight": 113,
+    "level": 75
+   },
+   "Precise Focus": {
+    "weight": 906,
+    "level": 50
+   },
+   "Stoic Focus": {
+    "weight": 1811,
+    "level": 1
+   },
+   "Hex Breaker": {
+    "weight": 113,
+    "level": 75
+   }
+  },
+  "Flask Effect Duration": {
+   "Distilled Perfection": {
+    "weight": 1079,
+    "level": 1
+   },
+   "Spiked Concoction": {
+    "weight": 539,
+    "level": 50
+   },
+   "Fasting": {
+    "weight": 539,
+    "level": 50
+   },
+   "Mender's Wellspring": {
+    "weight": 202,
+    "level": 68
+   },
+   "Special Reserve": {
+    "weight": 1079,
+    "level": 1
+   },
+   "Numbing Elixir": {
+    "weight": 202,
+    "level": 68
+   },
+   "Brewed for Potency": {
+    "weight": 1079,
+    "level": 1
+   },
+   "Peak Vigour": {
+    "weight": 1079,
+    "level": 1
+   },
+   "Liquid Inspiration": {
+    "weight": 202,
+    "level": 68
+   }
+  },
+  "Flask Recovery": {
+   "Distilled Perfection": {
+    "weight": 1778,
+    "level": 1
+   },
+   "Spiked Concoction": {
+    "weight": 889,
+    "level": 50
+   },
+   "Fasting": {
+    "weight": 889,
+    "level": 50
+   },
+   "Mender's Wellspring": {
+    "weight": 333,
+    "level": 68
+   },
+   "Special Reserve": {
+    "weight": 1778,
+    "level": 1
+   },
+   "Numbing Elixir": {
+    "weight": 333,
+    "level": 68
+   }
+  }
+ },
+ "other_prefixes": [
+  {
+   "side": "Prefix",
+   "group": "Life",
+   "tier": 3,
+   "name": "Hale",
+   "level": 1,
+   "weight": 500,
+   "text": "Added Small Passive Skills also grant: +(2\u20143) to Maximum Life",
+   "tags": "Life"
+  },
+  {
+   "side": "Prefix",
+   "group": "Life",
+   "tier": 2,
+   "name": "Healthy",
+   "level": 68,
+   "weight": 400,
+   "text": "Added Small Passive Skills also grant: +(4\u20147) to Maximum Life",
+   "tags": "Life"
+  },
+  {
+   "side": "Prefix",
+   "group": "Life",
+   "tier": 1,
+   "name": "Sanguine",
+   "level": 84,
+   "weight": 300,
+   "text": "Added Small Passive Skills also grant: +(8\u201410) to Maximum Life",
+   "tags": "Life"
+  },
+  {
+   "side": "Prefix",
+   "group": "Mana",
+   "tier": 3,
+   "name": "Beryl",
+   "level": 1,
+   "weight": 500,
+   "text": "Added Small Passive Skills also grant: +(2\u20145) to Maximum Mana",
+   "tags": "Mana"
+  },
+  {
+   "side": "Prefix",
+   "group": "Mana",
+   "tier": 2,
+   "name": "Cobalt",
+   "level": 68,
+   "weight": 400,
+   "text": "Added Small Passive Skills also grant: +(6\u20148) to Maximum Mana",
+   "tags": "Mana"
+  },
+  {
+   "side": "Prefix",
+   "group": "Mana",
+   "tier": 1,
+   "name": "Azure",
+   "level": 84,
+   "weight": 300,
+   "text": "Added Small Passive Skills also grant: +(9\u201410) to Maximum Mana",
+   "tags": "Mana"
+  },
+  {
+   "side": "Prefix",
+   "group": "ES",
+   "tier": 3,
+   "name": "Shining",
+   "level": 1,
+   "weight": 500,
+   "text": "Added Small Passive Skills also grant: +(4\u20145) to Maximum Energy Shield",
+   "tags": "Defences, Energy Shield"
+  },
+  {
+   "side": "Prefix",
+   "group": "ES",
+   "tier": 2,
+   "name": "Glimmering",
+   "level": 68,
+   "weight": 400,
+   "text": "Added Small Passive Skills also grant: +(6\u20149) to Maximum Energy Shield",
+   "tags": "Defences, Energy Shield"
+  },
+  {
+   "side": "Prefix",
+   "group": "ES",
+   "tier": 1,
+   "name": "Glowing",
+   "level": 84,
+   "weight": 300,
+   "text": "Added Small Passive Skills also grant: +(10\u201412) to Maximum Energy Shield",
+   "tags": "Defences, Energy Shield"
+  },
+  {
+   "side": "Prefix",
+   "group": "Armour",
+   "tier": 3,
+   "name": "Lacquered",
+   "level": 1,
+   "weight": 500,
+   "text": "Added Small Passive Skills also grant: +(11\u201420) to Armour",
+   "tags": "Defences, Armour"
+  },
+  {
+   "side": "Prefix",
+   "group": "Armour",
+   "tier": 2,
+   "name": "Studded",
+   "level": 68,
+   "weight": 400,
+   "text": "Added Small Passive Skills also grant: +(21\u201430) to Armour",
+   "tags": "Defences, Armour"
+  },
+  {
+   "side": "Prefix",
+   "group": "Armour",
+   "tier": 1,
+   "name": "Ribbed",
+   "level": 84,
+   "weight": 300,
+   "text": "Added Small Passive Skills also grant: +(31\u201440) to Armour",
+   "tags": "Defences, Armour"
+  },
+  {
+   "side": "Prefix",
+   "group": "Evasion",
+   "tier": 3,
+   "name": "Agile",
+   "level": 1,
+   "weight": 500,
+   "text": "Added Small Passive Skills also grant: +(11\u201420) to Evasion",
+   "tags": "Defences, Evasion"
+  },
+  {
+   "side": "Prefix",
+   "group": "Evasion",
+   "tier": 2,
+   "name": "Dancer's",
+   "level": 68,
+   "weight": 400,
+   "text": "Added Small Passive Skills also grant: +(21\u201430) to Evasion",
+   "tags": "Defences, Evasion"
+  },
+  {
+   "side": "Prefix",
+   "group": "Evasion",
+   "tier": 1,
+   "name": "Acrobat's",
+   "level": 84,
+   "weight": 300,
+   "text": "Added Small Passive Skills also grant: +(31\u201440) to Evasion",
+   "tags": "Defences, Evasion"
+  },
+  {
+   "side": "Prefix",
+   "group": "Damage",
+   "tier": 3,
+   "name": "Harmful",
+   "level": 1,
+   "weight": 500,
+   "text": "Added Small Passive Skills also grant: 2% increased Damage",
+   "tags": "Damage"
+  },
+  {
+   "side": "Prefix",
+   "group": "Damage",
+   "tier": 2,
+   "name": "Hazardous",
+   "level": 68,
+   "weight": 400,
+   "text": "Added Small Passive Skills also grant: 3% increased Damage",
+   "tags": "Damage"
+  },
+  {
+   "side": "Prefix",
+   "group": "Damage",
+   "tier": 1,
+   "name": "Dangerous",
+   "level": 84,
+   "weight": 300,
+   "text": "Added Small Passive Skills also grant: 4% increased Damage",
+   "tags": "Damage"
+  },
+  {
+   "side": "Prefix",
+   "group": "Effect",
+   "tier": 2,
+   "name": "Potent",
+   "level": 1,
+   "weight": 500,
+   "text": "Added Small Passive Skills have 25% increased Effect",
+   "tags": ""
+  },
+  {
+   "side": "Prefix",
+   "group": "Effect",
+   "tier": 1,
+   "name": "Powerful",
+   "level": 84,
+   "weight": 300,
+   "text": "Added Small Passive Skills have 35% increased Effect",
+   "tags": ""
+  }
+ ]
+}
